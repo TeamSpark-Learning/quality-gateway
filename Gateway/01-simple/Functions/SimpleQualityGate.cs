@@ -16,9 +16,13 @@ namespace _01_simple.Functions
             ILogger log)
         {
             await Task.Delay(TimeSpan.FromSeconds(5));
+
+            var resultStatus = Environment.GetEnvironmentVariable("STATUS")
+                ?? "successful";
+            
             return new OkObjectResult(new
             {
-                status = "successful"
+                status = resultStatus
             });
         }
     }
