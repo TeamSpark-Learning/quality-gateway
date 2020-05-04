@@ -1,0 +1,23 @@
+{
+  "applications": [
+    {
+      "name": "aspnet-webapp",
+      "image": "boykoant/aspnet-webapp:latest"
+    }
+  ],
+  "applicationsConfig": "",
+  
+  "tests": [
+    {
+      "name": "Category1",
+      "image": "boykoant/aspnet-webapp-test:latest",
+      "filter":  "Category=Category1"
+    },
+    {
+      "name": "Category2",
+      "image": "boykoant/aspnet-webapp-test:latest",
+      "filter":  "Category=Category2"
+    }
+  ],
+  "testsConfig": ""
+}

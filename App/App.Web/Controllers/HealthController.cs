@@ -1,4 +1,3 @@
-using System;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,26 +8,26 @@ namespace App.Web.Controllers
     public class HealthController : ControllerBase
     {
         [HttpGet]
-        public string Marko()
+        public IActionResult Marko()
         {
-            return "Polo!";
+            return StatusCode((int) HttpStatusCode.OK, "Polo!");
         }
 
         [HttpGet]
-        public dynamic Internal()
+        public IActionResult Internal()
         {
-            return new
+            return StatusCode((int) HttpStatusCode.OK, new 
             {
                 IsHealthy = true
-            };
+            });
         }
         
         [HttpGet]
         public IActionResult External()
         {
-            return StatusCode((int) HttpStatusCode.InternalServerError, new 
+            return StatusCode((int) HttpStatusCode.OK, new 
             {
-                IsHealthy = false
+                IsHealthy = true
             });
         }
     }
